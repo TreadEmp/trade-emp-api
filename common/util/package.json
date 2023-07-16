@@ -1,0 +1,36 @@
+{
+    "name": "@tradeemp-api-common/util",
+    "version": "0.0.1",
+    "description": "This is a util pacakge common for all apis",
+    "author": "sudesh",
+    "license": "ISC",
+    "main": "dist/index.js",
+    "publishConfig": {
+        "access": "private"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sudeshf/trade-emp-api.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1",
+        "build": "tsc -p ."
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.17",
+        "@types/node": "^12.7.2",
+        "nodemon": "^1.19.1",
+        "tslint": "^5.18.0",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "class-validator": "^0.10.0",
+        "express": "^4.17.1",
+        "ioredis": "^4.14.1",
+        "jsonwebtoken": "^9.0.0",
+        "moment": "^2.27.0",
+        "mongoose": "5.6.7",
+        "simple-node-logger": "^18.12.23",
+        "ts-mongoose": "0.0.19"
+    }
+}

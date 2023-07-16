@@ -1,0 +1,52 @@
+import {
+    IsString,
+    ValidateIf,
+    IsNotEmpty,
+    IsEnum,
+    IsNumber,
+} from "class-validator";
+
+enum Sort {
+    category,
+    location,
+    status,
+}
+
+export enum SortOrder {
+    asc,
+    desc
+}
+export default class JobFilterDto {
+    @IsNotEmpty()
+    @IsNumber()
+    public page: number;
+
+    @IsNotEmpty()
+    @ValidateIf(o => o.pageSize > 0)
+    @IsNumber()
+    public pageSize: number;
+
+    @IsEnum(Sort)
+    public sort: Sort;
+
+    @IsEnum(SortOrder)
+    public order: SortOrder;
+
+    @IsString()
+    public status: string;
+
+    @IsString()
+    public category: string;
+
+    @IsString()
+    public description: string;
+
+    @IsString()
+    public title: string;
+
+    @IsString()
+    public location: string;
+
+    @IsString()
+    public employerId: string;
+}

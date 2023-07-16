@@ -1,0 +1,20 @@
+
+version: 0.1
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --no-include-email --region us-east-2)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t te-auth-api:v1.0 -f services/te-auth-api/env/dev/Dockerfile .
+      - docker tag te-auth-api:v1.0 354522176000.dkr.ecr.us-east-2.amazonaws.com/te-auth-api:v1.0
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push 354522176000.dkr.ecr.us-east-2.amazonaws.com/te-auth-api:v1.0

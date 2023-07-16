@@ -1,0 +1,50 @@
+{
+    "name": "@tradeemp-api-services/te-auth-api",
+    "version": "1.0.0",
+    "description": "This api will serve the authorization part of tradeemp system",
+    "main": "dist/app.js",
+    "scripts": {
+        "start": "node dist/app.js",
+        "postinstall": "yarn install --ignore-scripts",
+        "build": "tsc -p .",
+        "watch": "sudo tsc -w -p .",
+        "debug": "nodemon --watch ./dist --inspect=0.0.0.0:9223 --nolazy ./dist/app.js",
+        "docker-debug": "sudo tsc  && docker-compose up --build"
+    },
+    "repository": {
+        "url": "https://Sudesh_protected@bitbucket.org/Sudesh_protected/trade-emp-api.git"
+    },
+    "author": "sudesh_protected",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/express": "^4.17.2",
+        "@types/node": "^12.6.9",
+        "nodemon": "^1.19.1",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.3"
+    },
+    "dependencies": {
+        "@tradeemp-api-common/util": "./common/util/",
+        "@types/body-parser": "^1.17.0",
+        "@types/cors": "^2.8.5",
+        "@types/mongoose": "^5.5.12",
+        "amazon-cognito-identity-js": "^3.2.0",
+        "aws-sdk": "^2.572.0",
+        "body-parser": "^1.19.0",
+        "class-transformer": "^0.2.3",
+        "class-validator": "^0.10.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "ioredis": "^4.14.1",
+        "json2typescript": "^1.2.3",
+        "jsonschema": "^1.2.4",
+        "mongoose": "^5.6.7",
+        "multer": "^1.4.2",
+        "node-fetch": "^2.6.0",
+        "reflect-metadata": "^0.1.13",
+        "simple-node-logger": "^18.12.23",
+        "swagger-ui-express": "^4.1.3",
+        "ts-mongoose": "^0.0.19",
+        "yarn": "^1.21.0"
+    }
+}

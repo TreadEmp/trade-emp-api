@@ -1,0 +1,3 @@
+---- Trade-emp Error Codes ----
+
+1xxxx -> jobs

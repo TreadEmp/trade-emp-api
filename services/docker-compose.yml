@@ -1,0 +1,24 @@
+version: "3"
+services:
+  te-base-api:
+    container_name: te-base-api
+    build: ./te-base-api
+    command: npm run debug
+    env_file:
+      - services.env
+    volumes:
+      - ./te-base-api:/usr/src/app/te-base-api
+    ports:
+      - "8090:8090"
+      - "8092:9222"
+  te-auth-api:
+    container_name: te-auth-api
+    build: ./te-auth-api
+    command: npm run debug
+    env_file:
+      - services.env
+    volumes:
+      - ./te-auth-api:/usr/src/app/te-auth-api
+    ports:
+      - "8091:8090"
+      - "8093:9223"
